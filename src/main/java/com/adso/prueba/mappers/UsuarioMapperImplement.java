@@ -11,8 +11,9 @@ import com.adso.prueba.models.Usuario;
 @Component
 public class UsuarioMapperImplement implements UsuarioMapper {
 
+    // Declara un metodo publico para convertir un dto a un modelo
     @Override // Verificacion de un metodo bien construido
-    public Usuario toUsuario(UsuarioDto usuarioDto) {
+    public Usuario toUsuario(UsuarioDto usuarioDto) { // Convierte un dto a un modelo
 
         if (usuarioDto == null) {
             return null;
@@ -25,6 +26,7 @@ public class UsuarioMapperImplement implements UsuarioMapper {
         return usuario;
     }
 
+// Declara un metodo publico para convertir un modelo a un productoDto
     @Override
     public UsuarioDto toUsuarioDto(Usuario usuario) {
 
