@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
+@AllArgsConstructor // Genera un constructor con todos los campos como parámetros:
 @NoArgsConstructor
 @Data
 @Entity

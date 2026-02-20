@@ -28,7 +28,7 @@ public UsuarioController(UsuarioRepository usrepo) {
 }
 @GetMapping("/")
 public String inicio() {
-    return new String("Saluo desde Spring Boot");
+    return new String("Saludo desde Spring Boot");
 }
 // Leer todos los datos
 @GetMapping("/users")
