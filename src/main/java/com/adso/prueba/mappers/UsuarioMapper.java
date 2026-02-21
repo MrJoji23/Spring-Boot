@@ -16,4 +16,8 @@ public interface UsuarioMapper {
 
     List<UsuarioDto> toUsuariosDto(List<Usuario> usuarios);
     // 2.Cambiar 1. Recibe
+
+    // void no espera nada, solo unirlos
+    void updateusuario(Usuario usuario, UsuarioDto usuarioDto);
+    // Metodo de actualizar el usuario, se espera el del modelo y el de dto
 }

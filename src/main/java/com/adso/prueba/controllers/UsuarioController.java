@@ -16,6 +16,8 @@ import com.adso.prueba.dtos.UsuarioDto;
 import com.adso.prueba.models.Usuario;
 import com.adso.prueba.repositories.UsuarioRepository;
 import com.adso.prueba.services.UsuarioServices;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 @RestController
 @RequestMapping("/api/users") // El inicio de la URL
@@ -59,6 +61,11 @@ public Usuario CrearUsuario(@RequestBody Usuario usuario) {
     @PostMapping("/guardar")
     public ResponseEntity<UsuarioDto> guardarusuario(@RequestBody UsuarioDto usuarioDto) {
         return new ResponseEntity<>(usuarioServices.saveUser(usuarioDto), HttpStatus.CREATED);
+    }
+
+    @PutMapping("update/{id}")
+    public ResponseEntity<UsuarioDto> updateuser(@PathVariable Long id, @RequestBody UsuarioDto usuarioDto) {    
+        return new ResponseEntity<>(usuarioServices.acutalizarUsuario(id, usuarioDto),HttpStatus.OK);
 
     }
 

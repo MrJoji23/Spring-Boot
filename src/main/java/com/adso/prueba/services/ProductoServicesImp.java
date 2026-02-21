@@ -40,4 +40,11 @@ public class ProductoServicesImp implements ProductoServices {
         productRepostory.deleteById(id); // Elimina el producto encontrado del repositorio
         return productoMapper.toProductoDto(producto); // Devuelve el producto eliminado como DTO
 }
+    @Override
+    public ProductoDto actualizarProducto(Long id, ProductoDto productoDto){
+        Producto producto = productRepostory.findById(id).get();
+        productoMapper.updateproducto(producto, productoDto);
+        return productoMapper.toProductoDto(productRepostory.save(producto));
+    }
+
 }

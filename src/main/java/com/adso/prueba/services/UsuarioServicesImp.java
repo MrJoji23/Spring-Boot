@@ -31,4 +31,24 @@ public class UsuarioServicesImp implements UsuarioServices {
         return usuarioMapper.toUsuarioDto(userepo.save(usuario)); // Retorna el modelo y guarda el dto
     }
 
+    @Override// Verificacion que el metodo este bien
+    public UsuarioDto BuscarId(Long id) {
+        Usuario usuario = userepo.findById(id).orElseThrow(() -> new RuntimeException("Usuario no encontrado")); // Busca el producto por su ID en el repositorio(Modelo)
+        return usuarioMapper.toUsuarioDto(usuario); // Convierte el producto encontrado a un DTO y lo devuelve DTO
+    }   
+    
+    @Override
+    public UsuarioDto eliminarUsuario(Long id) {
+        Usuario usuario = userepo.findById(id).orElseThrow(() -> new RuntimeException("Usuario no encontrado")); // Busca el producto por su ID en el repositorio(Modelo)
+        userepo.deleteById(id); // Elimina el producto encontrado del repositorio
+        return usuarioMapper.toUsuarioDto(usuario); // Devuelve el producto eliminado como DTO
+    }
+    @Override
+    public UsuarioDto acutalizarUsuario(Long id, UsuarioDto usuarioDto){// Metodo del actualizar del UsuarioServices
+        Usuario usuario = userepo.findById(id).get();
+        usuarioMapper.updateusuario(usuario, usuarioDto);
+        return usuarioMapper.toUsuarioDto(userepo.save(usuario));
+    }
+
+
 }

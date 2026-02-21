@@ -14,4 +14,5 @@ public interface ProductoMapper {
 
     ProductoDto toProductoDto(Producto producto);
     // Convierte dto      // Recibe modelo
+    void updateproducto(Producto producto, ProductoDto productoDto);
 }

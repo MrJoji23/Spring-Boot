@@ -10,5 +10,10 @@ public interface UsuarioServices {
 
     public UsuarioDto saveUser(UsuarioDto usuarioDto);
                             // Recibe dto   Guarda el dto
-    
+
+    public UsuarioDto BuscarId(Long id);
+
+    public UsuarioDto eliminarUsuario(Long id);
+
+    public UsuarioDto acutalizarUsuario(Long id, UsuarioDto usuarioDto);
 }

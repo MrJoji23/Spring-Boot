@@ -51,4 +51,16 @@ public class ProductoMapperImp implements ProductoMapper {
         }
         return productoDto;
     }
+    @Override
+    public void updateproducto(Producto producto, ProductoDto productoDto){
+        if (producto == null) {
+            return;
+        }
+        producto.setId(productoDto.getId_producto());
+        producto.setNomProducto(productoDto.getNombre());
+        producto.setPrecioProducto(productoDto.getPrecio());
+        producto.setCantidadProducto(productoDto.getCantidad());
+        producto.setDescripcionProducto(productoDto.getDescripcion());
+        producto.setDisponibleProducto(productoDto.getDisponible());
+    }
 }
