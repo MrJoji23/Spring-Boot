@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @AllArgsConstructor
-@Embeddable // Verificar que el usuario no este relacionado con el proyecto
+@Embeddable // Verificar que el usuario no este relacionado con el proyecto (Que no se repitan)
 @Data
 public class EmpleadoProyectoId implements Serializable{// Verificar que no se repitan(Serializable@A@)
 

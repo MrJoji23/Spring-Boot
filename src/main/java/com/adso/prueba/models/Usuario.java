@@ -10,7 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor // Genera un constructor con todos los campos como parámetros:
-@NoArgsConstructor
+@NoArgsConstructor 
 @Data
 @Entity
 public class Usuario {
@@ -22,6 +22,8 @@ public class Usuario {
     @Column(nullable = false, length = 50)
     private String nom;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 50, unique = true)
     private String email;
+
+    private String password;
 }

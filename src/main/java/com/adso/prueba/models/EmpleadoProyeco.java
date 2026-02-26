@@ -25,14 +25,14 @@ public class EmpleadoProyeco {
     @EmbeddedId
     private EmpleadoProyectoId id = new EmpleadoProyectoId(null, null);
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY) // Carga perezosa
     @MapsId("empleadoId")
-    @JoinColumn(name = "empleado_id", foreignKey= @ForeignKey(name = "fk_empleado_proyecto"))
+    @JoinColumn(name = "empleado_id", foreignKey= @ForeignKey(name = "fk_empleado_proyecto_empleado"))
     private Empleados empleado;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("proyectoId")
-    @JoinColumn(name = "proyecto_id", foreignKey= @ForeignKey(name = "fk_empleado_proyecto"))
+    @JoinColumn(name = "proyecto_id", foreignKey= @ForeignKey(name = "fk_empleado_proyecto_proyecto"))
     private Proyecto proyecto;
 
     @Column(name = "Fecha_asignacion")
