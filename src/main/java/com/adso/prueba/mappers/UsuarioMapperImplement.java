@@ -23,12 +23,13 @@ public class UsuarioMapperImplement implements UsuarioMapper {
         usuario.setId(usuarioDto.getId_usuario());
         usuario.setNom(usuarioDto.getNombre());
         usuario.setEmail(usuarioDto.getCorreo());
+        usuario.setPassword(usuarioDto.getPassword());
         return usuario;
     }
 
 // Declara un metodo publico para convertir un modelo a un productoDto
     @Override
-    public UsuarioDto toUsuarioDto(Usuario usuario) {
+    public UsuarioDto toUsuarioDto(Usuario usuario) {// Convertir un modelo a dto
 
         if (usuario == null) {
             return null;

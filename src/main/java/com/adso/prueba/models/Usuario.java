@@ -1,10 +1,16 @@
 package com.adso.prueba.models;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,4 +32,8 @@ public class Usuario {
     private String email;
 
     private String password;
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<UsuarioRol> usuarioRoles = new HashSet<>(); // HashSet crear una colección que NO permite elementos repetidos y que tiene acceso rápido (muy eficiente).
+
 }

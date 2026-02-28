@@ -14,13 +14,6 @@ public class UsuarioRolId implements Serializable {// Verificar que no se repita
     private Long iduser;
     private Byte idRol;
 
-    @Override
-    public boolean equals(Object o){
-        //Implementacion
-    }
-    @Override
-    public int hashCode(){//Hashcode es comparar de que el id ya no este, y no repiten los datos en la llave primaria
-        //Implementacion
-    }
+
 
 }
